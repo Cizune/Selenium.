@@ -5,6 +5,13 @@ from selenium.webdriver.common.by import By
 
 file = open("log.txt","w")
 driver = webdriver.Chrome()
+option = webdriver.ChromeOptions()
+
+option.add_experimental_option('detach', True) # Позволяет не закрывать прогграму после работы
+
+#option.add_argument("--headless") #помогает проверить прогграмму без запуска
+driver = webdriver.Chrome(options=option)
+
 
 def set_up():
     driver.get('http://www.saucedemo.com/')
